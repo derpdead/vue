@@ -1,16 +1,46 @@
 <template>
     <div id="app">
         <div id="nav">
-            <router-link to="/">
-                Home
-            </router-link> |
-            <router-link to="/about">
-                About
+            <router-link
+                v-for="(page, index) in pages"
+                :key="index"
+                :to="page.where">
+                {{ page.info }}
             </router-link>
         </div>
         <router-view />
     </div>
 </template>
+
+<script>
+
+export default {
+    name: "App",
+    data() {
+        return {
+            pages: [
+                {
+                    where: '/',
+                    info: 'Home',
+                },
+                {
+                    where: '/score',
+                    info: 'Score',
+                },
+                {
+                    where: '/settings',
+                    info: 'Settings',
+                },
+                {
+                    where: '/vote',
+                    info: 'Vote',
+                },
+            ]
+        }
+    },
+}
+
+</script>
 
 <style lang="scss">
 #app {

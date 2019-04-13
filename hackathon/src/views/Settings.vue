@@ -1,5 +1,7 @@
 <template>
-    <PageWrapper />
+    <PageWrapper>
+        <h1>Settings page, yeah!!!</h1>
+    </PageWrapper>
 </template>
 
 <script>

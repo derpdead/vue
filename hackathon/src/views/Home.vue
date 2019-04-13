@@ -1,8 +1,6 @@
 <template>
     <PageWrapper>
-        <img
-            alt="Vue logo"
-            src="../assets/logo.png">
+        <h1>Home page, yeah!!!</h1>
     </PageWrapper>
 </template>
 
