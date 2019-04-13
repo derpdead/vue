@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
@@ -29,4 +29,13 @@ export default new Router({
             component: () => import('./views/Settings.vue'),
         },
     ]
-})
+});
+
+router.beforeEach((to, from, next) => {
+    if (localStorage.isAdmin) {
+        // TODO: Do sth...
+    }
+    next();
+});
+
+export default router;
